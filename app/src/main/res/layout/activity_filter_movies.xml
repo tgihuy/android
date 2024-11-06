@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+        
+    <Spinner
+        android:id="@+id/spinner_genre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="16dp"
+        android:background="#ffffff" />
+
+    <Spinner
+        android:id="@+id/spinner_year"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/spinner_genre"
+        android:layout_marginBottom="16dp"
+        android:background="#ffffff" />
+
+    <Button
+        android:id="@+id/btn_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter"
+        android:layout_below="@id/spinner_year"
+        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"
+        android:background="#6200EE"
+        android:textColor="@color/white" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_movies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/btn_filter"
+            android:background="@color/main_color"
+            app:reverseLayout="false" />
+    </RelativeLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/dark_blue">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageViewHome"
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/btn_1"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textViewHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Home"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/ic_action_name"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Filter"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/ic_action_login"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/login_status_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Log In"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/btn_4"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/adminOptionsLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.25"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageViewAdmin"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:src="@drawable/ic_action_admin"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/textViewAdmin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Admin"
+                        android:textAlignment="center"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </com.google.android.material.bottomappbar.BottomAppBar>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

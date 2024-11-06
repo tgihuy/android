@@ -1,0 +1,17 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Viền ngoài cùng -->
+    <item android:right="4dp" android:left="4dp" android:top="4dp" android:bottom="4dp">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="4dp"
+                android:color="#FF000000" /> <!-- Thay thế bằng màu viền bạn muốn -->
+        </shape>
+    </item>
+    <!-- Nền bên trong -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@android:color/white" /> <!-- Thay thế bằng màu nền bạn muốn -->
+        </shape>
+    </item>
+</layer-list>

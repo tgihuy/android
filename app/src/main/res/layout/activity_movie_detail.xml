@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- ImageView để hiển thị hình ảnh của phim -->
+    <ImageView
+        android:id="@+id/imageViewDetail"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:background="@android:color/black" />
+
+    <!-- ScrollView để chứa thông tin chi tiết phim -->
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/imageViewDetail"
+        android:layout_marginTop="126dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewDetail"
+        android:padding="16dp">
+
+        <!-- LinearLayout dọc để chứa các TextView hiển thị thông tin -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- TextView để hiển thị tên phim -->
+            <TextView
+                android:id="@+id/textViewMovieTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- TextView để hiển thị mô tả phim -->
+            <TextView
+                android:id="@+id/textViewMovieDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/textViewReleaseDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/textViewDirector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp" />
+
+            <!-- LinearLayout ngang để chứa thông tin Film Crew -->
+            <LinearLayout
+                android:id="@+id/crewContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <!-- ImageView để hiển thị hình ảnh của diễn viên hoặc ekip sản xuất -->
+                <ImageView
+                    android:id="@+id/imageViewCrew"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:background="@android:color/black" />
+
+                <!-- LinearLayout dọc để chứa thông tin chi tiết của diễn viên hoặc ekip sản xuất -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <!-- TextView để hiển thị tên của diễn viên hoặc ekip sản xuất -->
+                    <TextView
+                        android:id="@+id/textViewCrewName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- TextView để hiển thị vai trò của diễn viên hoặc ekip sản xuất -->
+                    <TextView
+                        android:id="@+id/textViewCrewRole"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Button để quay lại màn hình trước đó -->
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:tint="@android:color/white" />
+
+</RelativeLayout>
